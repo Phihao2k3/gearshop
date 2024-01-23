@@ -1,0 +1,39 @@
+<div class="container p-5">
+  <div class="row">
+    <form style="width:1000px" method="get" action="/admin/Categories">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Thêm Categories</label>
+        <input
+        name="Categories_name"
+          type="text"
+          class="form-control"
+          placeholder="Nhập tên Categories"
+        />
+      </div>
+      <button type="submit" name="Categories_btn" value="add" class="btn btn-primary">Nhập</button>
+    </form>
+  </div>
+  <h4 class="mt-5">
+    Danh sách Sản phẩm
+  </h4>
+  <table class="table mt-5">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Tên sản phẩm</th>
+        <th scope="col">Loai sản phẩm</th>
+        <th scope="col">Giá sản phẩm</th>
+        <th scope="col">hình ảnh</th>
+        <th scope="col">Mô tả</th>
+        <th scope="col">Sửa</th>
+        <th scope="col">Xóa</th>
+        
+      </tr>
+    </thead>
+    <tbody id="tableProduct">
+       {{{productlist}}}
+    </tbody>
+      
+    </tbody>
+  </table>
+</div>

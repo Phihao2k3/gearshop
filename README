@@ -1,0 +1,60 @@
+Trang Web Bán Gear Máy Tính
+Mô Tả
+Trang web này là một nền tảng thương mại điện tử chuyên bán các sản phẩm Gear máy tính như bàn phím, chuột, tai nghe và các phụ kiện khác. Dự án được xây dựng theo mô hình MVC (Model-View-Controller).
+
+Cài Đặt
+câu lệnh chạy dự án : npm start
+
+Các Thư Viện Được Cài
+
+cors: Middleware để xử lý CORS (Cross-Origin Resource Sharing).
+express: Framework web cho Node.js.
+express-handlebars: Handlebars view engine cho Express.
+firebase: Dùng để tương tác với Firebase, bao gồm lưu trữ dữ liệu và xác thực người dùng.
+morgan: Middleware để ghi log HTTP requests.
+node-sass: Sass middleware cho Node.js.
+nodemon: Dùng để tự động khởi động lại máy chủ khi có thay đổi trong mã nguồn.
+
+Trang Web Bán Gear Máy Tính
+Mô Tả
+Trang web này là một nền tảng thương mại điện tử chuyên bán các sản phẩm Gear máy tính như bàn phím, chuột, tai nghe và các phụ kiện khác. Dự án được xây dựng theo mô hình MVC (Model-View-Controller).
+
+Cài Đặt
+Clone Dự Án
+
+bash
+Copy code
+git clone https://github.com/your-username/trang-web-ban-gear.git
+cd trang-web-ban-gear
+Cài Đặt Thư Viện
+
+bash
+Copy code
+npm install
+Các Thư Viện Được Cài
+cors: Middleware để xử lý CORS (Cross-Origin Resource Sharing).
+express: Framework web cho Node.js.
+express-handlebars: Handlebars view engine cho Express.
+firebase: Dùng để tương tác với Firebase, bao gồm lưu trữ dữ liệu và xác thực người dùng.
+morgan: Middleware để ghi log HTTP requests.
+node-sass: Sass middleware cho Node.js.
+nodemon: Dùng để tự động khởi động lại máy chủ khi có thay đổi trong mã nguồn.
+
+Cấu Trúc Dự Án
+
+src/: Mã nguồn của ứng dụng theo mô hình MVC.
+controllers/: Logic xử lý yêu cầu từ người dùng.
+models/: Định nghĩa các model liên quan đến dữ liệu.
+views/: Templates và giao diện người dùng.
+routes/: Định nghĩa các tuyến đường (routes) của ứng dụng.
+public/: Các tệp tĩnh như hình ảnh, biểu tượng favicon, v.v.
+
+Chạy Dự Án
+
+Truy cập http://127.0.0.1:3000/home để xem trang web của người dùng và http://127.0.0.1:3000/admin để truy cập trang quản trị.
+
+Đóng Góp
+Nếu bạn muốn đóng góp vào dự án, vui lòng đọc Hướng Dẫn Đóng Góp để biết thêm chi tiết.
+
+Báo Lỗi và Yêu Cầu Tính Năng
+Nếu bạn phát hiện lỗi hoặc có ý kiến đóng góp, hãy tạo issue mới
