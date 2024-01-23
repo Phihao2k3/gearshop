@@ -55,7 +55,29 @@ class adminController {
       res.status(500).send("Internal Server Error");
     }
   }
-
+  async odersdetail(req, res) {
+    const odersdetail = ref(db, "order_details");
+    const odersnapshot = await get(odersdetail);
+    const odersdata = odersnapshot.val() || {};
+    let html = "";
+    odersdata.forEach((element) => {
+      html += `<tr>
+    
+      <td>${element.
+        order_id
+        }</td>
+      <td>${element.
+        product_id
+        }</td>
+      <td>${element.
+        quantity
+        }</td>
+      <td>${element.
+        unit_price}</td>
+    </tr>`;
+      });console.log(odersdata);
+    res.render("./admin/odersdetail", { layout: "layout_admin", oderlist: html});
+  }
   async categories(req, res) {
     try {
       const { Categories_name, Categories_btn, Categories_btn_remove } =
@@ -142,9 +164,9 @@ class adminController {
       <td>${element.customer_email}</td>
       <td>${element.created_date}</td>
       <td>${element.status}</td>
-      <td><button type="button" class="btn btn-detail btn-primary" data-toggle="modal" data-target="#exampleModal" name="btn_detail" value="${element.id}">
-      Chi tiết
-    </button></td>
+      <td>
+        <a href="/admin/oders/${element.id}">Chi tiết</a>
+    </td>
     </tr>`;
     });
 
