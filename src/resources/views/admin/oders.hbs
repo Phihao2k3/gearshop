@@ -27,10 +27,27 @@
         <th scope="col">ngày tạo</th>
         <th scope="col">trạng thái</th>
         <th scope="col">xóa</th>
+        <th scope="col">thao tác</th>
       </tr>
     </thead>
     <tbody id="tableCategories">
-       {{{oderlist}}}
+      {{#each oders}}
+     <tr>
+      <td>{{this.id}}</td>
+      <td>{{this.customer_name}}</td>
+      <td>{{this.customer_email}}</td>
+      <td>{{this.customer_address}}</td>
+      <td>{{this.customer_email}}</td>
+      <td>{{this.created_date}}</td>
+      <td>{{this.status}}</td>
+      <td>
+        <a href="/admin/oders/detail?id={{this.id}}" class="btn btn-danger">Xem chi tiết</a>
+    </td>
+    <td>
+        <a href="/admin/oders/accept?id={{this.id}}" class="btn btn-primary">Xác nhận</a>
+    </td>
+    </tr>
+    {{/each}}
     </tbody>
       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">

@@ -3,8 +3,8 @@ const {
   getStorage,
   ref: storageRef,
   getDownloadURL,
-  listAll ,
-
+  listAll,
+  uploadBytes,
 } = require("firebase/storage");
 const {
   getDatabase,
@@ -13,6 +13,7 @@ const {
   get,
   child,
   onValue,
+  push,
 } = require("firebase/database");
 const firebaseConfig = {
   apiKey: "AIzaSyBGs3XcdD9B9LJRlZfx4FPjXoTeUtZ9t7Y",
@@ -31,5 +32,17 @@ const db = getDatabase(app);
 
 // Lấy đường dẫn URL để tải hình ảnh
 
-
-module.exports = { db, ref, set, get, child, onValue ,getStorage, storageRef, getDownloadURL,listAll };
+module.exports = {
+  db,
+  ref,
+  set,
+  get,
+  child,
+  onValue,
+  getStorage,
+  storageRef,
+  getDownloadURL,
+  listAll,
+  uploadBytes,
+  push,
+};

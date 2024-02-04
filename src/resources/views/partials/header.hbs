@@ -23,7 +23,7 @@
         <li class="nav-item active">
           <a class="nav-link" href="home">Trang Chủ</a>
         </li>
-        <li><a class="nav-link" href="sanpham">Sản Phẩm</a></li>
+        <li><a class="nav-link" href="/sanpham">Sản Phẩm</a></li>
         <li>
           <a class="nav-link" href="About-us">Giới thiệu</a>
         </li>
@@ -37,17 +37,30 @@
       </ul>
 
       <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
+        {{#if checklogin}}
+          <!-- Đã đăng nhập: Hiện nút đăng xuất -->
+          <li>
+            <a class="nav-link" href="/dangxuat">Đăng xuất</a>
+          </li>
+        {{else}}
+          <!-- Chưa đăng nhập: Hiện nút đăng nhập -->
+          <li>
+            <a class="nav-link" href="/dangnhap">Đăng nhập</a>
+          </li>
+          <li>
+            <a class="nav-link" href="cart.html"><img
+                src="/images/cart.svg"
+              /></a>
+          </li>
+        {{/if}}
         <li>
-          <a class="nav-link" href="dangnhap">
-            Đăng nhập
-          </a>
-        </li>
-        <li>
-          <a class="nav-link" href="cart.html"><img
+          <a class="nav-link" href="/cart"><img
               src="/images/cart.svg"
             /></a>
+
         </li>
       </ul>
+
     </div>
   </div>
 </nav>

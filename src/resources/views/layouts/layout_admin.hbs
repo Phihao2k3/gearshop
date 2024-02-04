@@ -11,6 +11,8 @@
 
     <!-- Custom styles for this template-->
     <link href="/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet" />
+
     <title>{{page/title}}</title>
 </head>
 <bodyid="page-top">
@@ -64,10 +66,11 @@
             </div>
 
         </ul>
-    <div id="main">
+    <div id="main" class="col-10 main_admin">
         {{{body}}}
     </div>
    </div>
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
       <script src="/vendor/jquery/jquery.min.js"></script>
     <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
@@ -83,7 +86,7 @@
     <!-- Page level custom scripts -->
     <script src="/js/demo/chart-area-demo.js"></script>
     <script src="/js/demo/chart-pie-demo.js"></script>
-    <script src="/js/oders.js"></script>
+    <script type="module" src="/js/oders.js"></script>
     
 </bodyid=>
 </html>

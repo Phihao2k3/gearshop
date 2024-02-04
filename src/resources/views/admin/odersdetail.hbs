@@ -9,13 +9,23 @@
         
         <th scope="col">oder id</th>
         <th scope="col">id sản phẩm</th>
+        <th scope="col">Tên Sản phảm</th>
         <th scope="col">số lượng</th>
         <th scope="col">giá</th>
     
       </tr>
     </thead>
     <tbody id="tableCategories">
-       {{{oderlist}}}
+      {{#each odersdetail}}
+       <tr>
+      <td>{{this.id}}</td>
+      <td>{{this.product_id}}</td>
+      <td>{{this.product_name}}</td>
+      <td>{{this.quantity}}</td>
+      <td>{{this.price
+}}</td>
+    </tr>
+    {{/each}}
     </tbody>
       </table>
 </div>

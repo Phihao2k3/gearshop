@@ -1,18 +1,99 @@
-<div class="container p-5">
-  <div class="row">
-    <form style="width:1000px" method="get" action="/admin/Categories">
-      <div class="form-group">
-        <label for="exampleInputEmail1">Thêm Categories</label>
+<div class="p-5">
+    <form action="/admin/Product" method="post" enctype="multipart/form-data">
+      <div class="row">
+
+      <div class="form-group col-6">
+        <label for="">Thêm sản phẩm</label>
         <input
-        name="Categories_name"
+        name="product_brand"
           type="text"
           class="form-control"
-          placeholder="Nhập tên Categories"
+          placeholder="Nhập tên thương hiệu"
+        />
+        <label for="">
+          loại sản phẩm
+        </label>
+        <select name="product_cate" id="" class="form-control">
+          <option value="">
+            chọn loại sản phẩm
+          </option>
+          {{#each producttype}}
+          <option value="{{id}}">
+            {{name}}
+          </option>
+          {{/each}}
+        </select>
+        <label for="">
+          màu sắc
+        </label>
+        <input
+        name="product_color"
+          type="text"
+          class="form-control"
+          placeholder="Nhập màu sắc"
+        />
+        <label for="">
+          kiểu kết nối
+        </label>
+        <input
+         name="product_connect"
+          type="text"
+          class="form-control"
+          placeholder="Nhập kiểu kết nối"
+        />
+        <label for="">
+          hình ảnh
+        </label>
+        <input
+         name="product_image"
+          type="file"
+          class="form-control"
+          placeholder="Nhập hình ảnh"
+          
         />
       </div>
-      <button type="submit" name="Categories_btn" value="add" class="btn btn-primary">Nhập</button>
+      <div class="form-group col-6">
+        <label for="">
+          giá sản phẩm
+        </label>
+        <input
+         name="product_price"
+          type="text"
+          class="form-control"
+          placeholder="Nhập giá sản phẩm"
+        />
+          <label for="">
+          layout
+        </label>
+        <input
+         name="product_layout"
+          type="text"
+          class="form-control"
+          placeholder="Nhập layout"
+        />
+        <label for="">
+          model
+        </label>
+        <input
+         name="product_model"
+          type="text"
+          class="form-control"
+          placeholder="Nhập model"
+        />
+        <label for="">
+          switch
+        </label>
+        <input
+         name="product_switch"
+          type="text"
+          class="form-control"
+          placeholder="Nhập switch"
+        />
+      </div>
+      </div>
+      <button type="submit" name="addproduct" value="add" class="btn btn-primary">Nhập</button>
     </form>
-  </div>
+  
   <h4 class="mt-5">
     Danh sách Sản phẩm
   </h4>
@@ -24,8 +105,6 @@
         <th scope="col">Loai sản phẩm</th>
         <th scope="col">Giá sản phẩm</th>
         <th scope="col">hình ảnh</th>
-        <th scope="col">Mô tả</th>
-        <th scope="col">Sửa</th>
         <th scope="col">Xóa</th>
         
       </tr>
