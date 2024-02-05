@@ -6,6 +6,7 @@ class loginController {
   index(req, res) {
     res.render("login", { layout: layout_logn });
   }
+  
   async login(req, res) {
     try {
       let {

@@ -21,3 +21,4 @@ priceRange.addEventListener("input", () => {
   }).format(priceRange.value);
   selectedPrice.textContent = `${formattedPrice}`;
 });
+console.log(urlParam);
