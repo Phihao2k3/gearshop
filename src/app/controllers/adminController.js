@@ -2,6 +2,7 @@ const productlist = require("../../public/js/module_AP/product");
 const cateclass = require("../../public/js/module_AP/categories");
 const storage = require("../../public/js/module_AP/storage");
 const oderclass = require("../../public/js/module_AP/oder");
+const thongkeclass = require("../../public/js/module_AP/thongkeadmin");
 const e = require("express");
 class adminController {
   async product(req, res) {
@@ -24,9 +25,7 @@ class adminController {
         <td><img src="${element.image}" width="100px" height="100px"></td>
         <td><a href="/admin/product/delete?id=${element.id}"
         class="btn btn-danger">Xóa</a></td>
-        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-        Launch demo modal
-      </button></td>
+        
         </tr>`;
       });
       // add product
@@ -202,8 +201,23 @@ class adminController {
     res.redirect("/admin/oders");
   }
   // Trang chủ admin
-  index(req, res) {
-    res.render("./admin/home", { layout: "layout_admin" });
+  async index(req, res) {
+    let thongke = new thongkeclass();
+    let thongleoder = await thongke.getalloder().then((data) => {
+      return data;
+    });
+    let totalprice = await thongke.toalmoney1m().then((data) => {
+      return data;
+    });
+    console.log(totalprice);
+    res.render("./admin/home", {
+      layout: "layout_admin",
+      oders: thongleoder.length,
+      totalprice1m: totalprice.toLocaleString("vi-VN", {
+        style: "currency",
+        currency: "VND",
+      }),
+    });
   }
 }
 
