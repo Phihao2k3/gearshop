@@ -24,6 +24,9 @@ class adminController {
         <td><img src="${element.image}" width="100px" height="100px"></td>
         <td><a href="/admin/product/delete?id=${element.id}"
         class="btn btn-danger">Xóa</a></td>
+        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Launch demo modal
+      </button></td>
         </tr>`;
       });
       // add product
@@ -195,7 +198,7 @@ class adminController {
     oder.oderaccept(idoder).then((data) => {
       return data;
     });
-    
+
     res.redirect("/admin/oders");
   }
   // Trang chủ admin

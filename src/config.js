@@ -14,6 +14,15 @@ const {
   child,
   onValue,
   push,
+  limitToFirst,
+  limitToLast,
+  startAt,
+  startAfter,
+  endAt,
+  endBefore,
+  equalTo,
+  query,
+  orderByChild 
 } = require("firebase/database");
 const firebaseConfig = {
   apiKey: "AIzaSyBGs3XcdD9B9LJRlZfx4FPjXoTeUtZ9t7Y",
@@ -45,4 +54,13 @@ module.exports = {
   listAll,
   uploadBytes,
   push,
+  limitToFirst,
+  limitToLast,
+  startAt,
+  startAfter,
+  endAt,
+  endBefore,
+  equalTo,
+  query,
+  orderByChild,
 };

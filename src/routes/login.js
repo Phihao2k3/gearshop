@@ -4,7 +4,7 @@ const loginController = require("../app/controllers/loginController");
 // tạo ra các route cho login 
 router.post("/", loginController.login);
 router.use("/:forgot", loginController.show)
-router.use("/", loginController.index);
+router.get("/", loginController.index);
 // set account
 
 module.exports = router;

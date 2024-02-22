@@ -6,13 +6,23 @@ class productController {
     const filprice = req.query.priceRange;
     const categories = new cateclass();
     const product = new productclass();
+  
     const categoriesdata = await categories.getall().then((data) => {
       return data;
     });
-    const productdata = await product.getall(idcate, filprice).then((data) => {
-      return data;
+    const productdata = await product
+      .pagenation(req.query.page, filprice, idcate)
+      .then((data) => {
+        return data;
+      });
+    let pageindex = [];
+    product.getall().then((data) => {
+      let pageNumber = Math.ceil(data.length / 8);
+      for (let index = 1; index <= pageNumber; index++) {
+        pageindex.push(index);
+      }
     });
-    productdata.map((element) => {
+     productdata.map((element) => {
       element.price = Number(element.price).toLocaleString("vi-VN", {
         style: "currency",
         currency: "VND",
@@ -22,6 +32,7 @@ class productController {
       productlist: productdata,
       checklogin: req.session.email,
       producttype: categoriesdata,
+      pageindex: pageindex,
     });
   }
   async showdetail(req, res) {

@@ -6,7 +6,7 @@ class loginController {
   index(req, res) {
     res.render("login", { layout: layout_logn });
   }
-  
+
   async login(req, res) {
     try {
       let {
@@ -18,30 +18,24 @@ class loginController {
         btn_login,
         btn_signup,
       } = req.body;
-      console.log(req.body);
       if (btn_login) {
         const newUser = new user();
         newUser.login(email, password).then((result) => {
           console.log(result);
-          if (result[0].status) {
-            req.session.email = result[0].email;
-            req.session.username = result[0].username;
-            req.session.id = result[0].id;
+          if (result.status) {
+            req.session.email = result.email;
+            req.session.username = result.username;
+            req.session.id = result.id;
 
             res.redirect("/home");
+          }else{
+            res.render("login", { layout: layout_logn, message: "Sai thông tin đăng nhập" });
           }
         });
       } else if (btn_signup) {
         const newUser = new user();
         newUser.register(regemail, regpassword, username).then((result) => {
-          if (result) {
-            res.redirect("/home");
-            req.session.email = result[0].email;
-            req.session.username = result[0].username;
-            req.session.id = result[0].id;
-          } else {
-            res.redirect("/login");
-          }
+          res.render("login", { layout: layout_logn, message: result });
         });
       }
     } catch (error) {

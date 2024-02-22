@@ -8,18 +8,19 @@ class cartController {
     });
     res.redirect("/cart");
   }
-  addcart(req, res) {
+   addcart(req, res) {
     if (req.session.email == undefined) {
       res.redirect("/dangnhap");
       return;
     } else {
       const cartclass = new cart();
       let { id: idproduct } = req.query;
-      cartclass.addproductcart(idproduct, req.session.id);
+       cartclass.addproductcart(idproduct, req.session.id);
+
       res.redirect("/cart");
     }
   }
-  index(req, res) {
+  async index(req, res) {
     const cartclass = new cart();
     let totalprice = 0;
 
